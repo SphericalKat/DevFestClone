@@ -4,11 +4,6 @@ package org.firehound.devfestclone.fragments;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,23 +18,20 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.auth.UserProfileChangeRequest;
 
 import org.firehound.devfestclone.MainActivity;
 import org.firehound.devfestclone.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 public class NavigationBottomSheetFragment extends BottomSheetDialogFragment {
     private static int RC_SIGN_IN = 69;
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -82,21 +74,15 @@ public class NavigationBottomSheetFragment extends BottomSheetDialogFragment {
             case 0:
                 view.findViewById(R.id.text_nav_main).setBackgroundResource(bgResource);
             case 1:
-                view.findViewById(R.id.text_nav_agenda).setBackgroundResource(bgResource);
+                view.findViewById(R.id.text_qrcode_scan).setBackgroundResource(bgResource);
                 break;
             case 2:
-                view.findViewById(R.id.text_nav_scratch).setBackgroundResource(bgResource);
+                view.findViewById(R.id.text_pin_entry).setBackgroundResource(bgResource);
                 break;
             case 3:
-                view.findViewById(R.id.text_nav_quiz).setBackgroundResource(bgResource);
+                view.findViewById(R.id.text_vote).setBackgroundResource(bgResource);
                 break;
             case 4:
-                view.findViewById(R.id.text_nav_sponsors).setBackgroundResource(bgResource);
-                break;
-            case 5:
-                view.findViewById(R.id.text_nav_questions).setBackgroundResource(bgResource);
-                break;
-            case 6:
                 view.findViewById(R.id.text_nav_about).setBackgroundResource(bgResource);
                 break;
         }
@@ -107,23 +93,17 @@ public class NavigationBottomSheetFragment extends BottomSheetDialogFragment {
         view.findViewById(R.id.layout_nav_main).setOnClickListener(l -> {
             ((NavClickListener) requireActivity()).onNavItemClicked(0);
         });
-        view.findViewById(R.id.layout_nav_agenda).setOnClickListener(l -> {
+        view.findViewById(R.id.layout_qrcode_scan).setOnClickListener(l -> {
             ((NavClickListener) requireActivity()).onNavItemClicked(1);
         });
-        view.findViewById(R.id.layout_nav_scratch).setOnClickListener(l -> {
+        view.findViewById(R.id.layout_pin_entry).setOnClickListener(l -> {
             ((NavClickListener) requireActivity()).onNavItemClicked(2);
         });
-        view.findViewById(R.id.layout_nav_quiz).setOnClickListener(l -> {
+        view.findViewById(R.id.layout_vote).setOnClickListener(l -> {
             ((NavClickListener) requireActivity()).onNavItemClicked(3);
         });
-        view.findViewById(R.id.layout_nav_sponsors).setOnClickListener(l -> {
-            ((NavClickListener) requireActivity()).onNavItemClicked(4);
-        });
-        view.findViewById(R.id.layout_nav_questions).setOnClickListener(l -> {
-            ((NavClickListener) requireActivity()).onNavItemClicked(5);
-        });
         view.findViewById(R.id.layout_nav_about).setOnClickListener(l -> {
-            ((NavClickListener) requireActivity()).onNavItemClicked(6);
+            ((NavClickListener) requireActivity()).onNavItemClicked(4);
         });
         resetBackgrounds();
 
@@ -132,11 +112,9 @@ public class NavigationBottomSheetFragment extends BottomSheetDialogFragment {
     private void resetBackgrounds() {
         View view = getView();
         view.findViewById(R.id.layout_nav_main).setBackgroundResource(0);
-        view.findViewById(R.id.layout_nav_agenda).setBackgroundResource(0);
-        view.findViewById(R.id.layout_nav_scratch).setBackgroundResource(0);
-        view.findViewById(R.id.layout_nav_quiz).setBackgroundResource(0);
-        view.findViewById(R.id.layout_nav_sponsors).setBackgroundResource(0);
-        view.findViewById(R.id.layout_nav_questions).setBackgroundResource(0);
+        view.findViewById(R.id.layout_qrcode_scan).setBackgroundResource(0);
+        view.findViewById(R.id.layout_pin_entry).setBackgroundResource(0);
+        view.findViewById(R.id.layout_vote).setBackgroundResource(0);
         view.findViewById(R.id.layout_nav_about).setBackgroundResource(0);
 
     }

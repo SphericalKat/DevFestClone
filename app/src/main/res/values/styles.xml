@@ -9,6 +9,7 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
 
+
         <item name="md_corner_radius">16dp</item>
     </style>
 

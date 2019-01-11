@@ -1,26 +1,25 @@
 package org.firehound.devfestclone;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import me.jfenn.attribouter.Attribouter;
-
 import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 
-import org.firehound.devfestclone.fragments.AgendaFragment;
-import org.firehound.devfestclone.fragments.InfoFragment;
 import org.firehound.devfestclone.fragments.NavigationBottomSheetFragment;
-import org.firehound.devfestclone.fragments.QuestionFragment;
-import org.firehound.devfestclone.fragments.QuizFragment;
-import org.firehound.devfestclone.fragments.ScratchFragment;
-import org.firehound.devfestclone.fragments.SponsorFragment;
+import org.firehound.devfestclone.fragments.PinFragment;
+import org.firehound.devfestclone.fragments.QRFragment;
+import org.firehound.devfestclone.fragments.VoteFragment;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import me.jfenn.attribouter.Attribouter;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationBottomSheetFragment.NavClickListener {
     private NavigationBottomSheetFragment navigationBottomSheetFragment = new NavigationBottomSheetFragment();
     public static int selectedFragment = 1;
     private static final String TAG = "MainActivity";
+    public static final String QR_KEY = "org.firehound.timetable.QR_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,31 +50,23 @@ public class MainActivity extends AppCompatActivity implements NavigationBottomS
         switch (index){
 
             case 1:
-                selFrag = new AgendaFragment();
+                selFrag = new QRFragment();
                 Log.d(TAG, String.valueOf(index));
                 break;
             case 2:
-                selFrag = new ScratchFragment();
+                selFrag = new PinFragment();
                 Log.d(TAG, String.valueOf(index));
                 break;
             case 3:
-                selFrag = new QuizFragment();
+                selFrag = new VoteFragment();
                 Log.d(TAG, String.valueOf(index));
                 break;
             case 4:
-                selFrag = new SponsorFragment();
-                Log.d(TAG, String.valueOf(index));
-                break;
-            case 5:
-                selFrag = new QuestionFragment();
-                Log.d(TAG, String.valueOf(index));
-                break;
-            case 6:
                 selFrag = Attribouter.from(this).toFragment();
                 Log.d(TAG, String.valueOf(index));
                 break;
             default:
-                selFrag = new AgendaFragment();
+                selFrag = new QRFragment();
 
 
 

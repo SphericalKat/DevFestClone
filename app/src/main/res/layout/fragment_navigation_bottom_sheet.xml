@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/account_items_margin"
-            android:text="Yaswant Narayan"
+            android:text="Placeholder"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintStart_toEndOf="@+id/image_account"
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/account_items_margin"
-            android:text="yoyaswant@gmail.com"
+            android:text="someone@example.com"
             app:layout_constraintStart_toEndOf="@+id/image_account"
             app:layout_constraintTop_toBottomOf="@+id/text_account_username"
             tools:text="yoyaswant@gmail.com" />
@@ -103,6 +103,7 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline"
+            android:focusable="true"
             app:srcCompat="@drawable/ic_logout_white" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -145,99 +146,61 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout_nav_agenda"
+        android:id="@+id/layout_qrcode_scan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:clickable="true">
 
         <TextView
-            android:id="@+id/text_nav_agenda"
+            android:id="@+id/text_qrcode_scan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:drawableLeft="@drawable/ic_date_range_black_24dp"
+            android:drawableLeft="@drawable/ic_qr_code_scan"
             android:drawablePadding="@dimen/text_drawable_left_padding"
             android:gravity="center_vertical"
             android:padding="@dimen/textview_padding"
-            android:text="Agenda" />
+            android:text="Scan QR Code" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/layout_nav_scratch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/text_nav_scratch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:drawableLeft="@drawable/ic_ticket_white_24dp"
-            android:drawablePadding="@dimen/text_drawable_left_padding"
-            android:gravity="center_vertical"
-            android:padding="@dimen/textview_padding"
-            android:text="Scratch Card" />
-    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout_nav_quiz"
+        android:id="@+id/layout_pin_entry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:clickable="true">
 
         <TextView
-            android:id="@+id/text_nav_quiz"
+            android:id="@+id/text_pin_entry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:drawableLeft="@drawable/ic_lightbulb_black"
+            android:drawableLeft="@drawable/ic_pincode"
             android:drawablePadding="@dimen/text_drawable_left_padding"
             android:gravity="center_vertical"
             android:padding="@dimen/textview_padding"
-            android:text="Quiz" />
+            android:text="PIN Entry" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout_nav_questions"
+        android:id="@+id/layout_vote"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:clickable="true">
 
         <TextView
-            android:id="@+id/text_nav_questions"
+            android:id="@+id/text_vote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:drawableLeft="@drawable/ic_question_white"
+            android:drawableLeft="@drawable/ic_thumb_up"
             android:drawablePadding="@dimen/text_drawable_left_padding"
             android:gravity="center_vertical"
             android:padding="@dimen/textview_padding"
-            android:text="Questions" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_nav_sponsors"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="true">
-
-        <TextView
-            android:id="@+id/text_nav_sponsors"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:drawableLeft="@drawable/ic_account_multiple_white"
-            android:drawablePadding="@dimen/text_drawable_left_padding"
-            android:gravity="center_vertical"
-            android:padding="@dimen/textview_padding"
-            android:text="Sponsors" />
+            android:text="Cast your vote" />
     </LinearLayout>
 
     <LinearLayout
